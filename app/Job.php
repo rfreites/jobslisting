@@ -13,17 +13,17 @@ class Job extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-			'user_id',
+			'company_id',
 			'title',
-			//'salary',
-			//'description',
-			//'date_of_hire',
-			//'number_of_vacancies'
+			'salary',
+			'description',
+			'date_of_hire',
+			'number_of_vacancies'
 	];
 	
-	public function user()
+	public function company()
 	{
-		return $this->belongsTo(User::class);
+		return $this->belongsTo(Company::class);
 	}
 	
 }

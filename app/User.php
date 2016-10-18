@@ -15,7 +15,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'active'
+        'first_name', 
+    	'last_name',
+    	'email',
+    	'password',
+    	'active',
+    	'birthdate',
+    	'country',
+    	'city',
+    	'address',
+    	'nationality',
+    	'professional_branch',
+    	'professional_title',
+    	'professional_brief_description',
+    	'job_status'
     ];
 
     /**
@@ -27,7 +40,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function jobs(){
-    	return $this->hasMany(Job::class);
-    }
 }

@@ -68,12 +68,14 @@ $factory->define(Jobs4Devs\Company::class, function (Faker\Generator $faker)
 
 $factory->define(Jobs4Devs\Job::class, function (Faker\Generator $faker)
 {
+	$jobTitle = $faker->jobTitle();
 	return [
-			'title' => $faker->jobTitle(),
+			'title' => $jobTitle,
 			'salary' => random_int($min = 900, $max = 2500),
 			'description' => $faker->sentence(random_int($min = 12, $max = 20), $variableNbWords = true),
 			'hire_date' => $faker->dateTime(),
 			'number_of_vacancies' => random_int($min = 1, $max = 10),
+			'slug'  => (string)($jobTitle.'-'.$faker->numberBetween($min = 100000, $max = 999999))
 	];
 });
 		

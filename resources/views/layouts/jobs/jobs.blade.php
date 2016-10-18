@@ -3,7 +3,7 @@
 @section('content-app')
 	<div class="container">
 		<div class="row">
-			jobs
+			{{ $job->title }}
 		</div>
 	</div>
 @stop

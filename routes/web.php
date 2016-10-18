@@ -16,36 +16,18 @@ use Jobs4Devs\Http\Controllers\HomeController;
 Route::get('/', 'HomeController@index');
 
 /**
- * Jobs
- */
-Route::get('/jobs', 'JobsController@index' );
-
-/**
- * Simple ruta
- */
-Route::get('/simpleruta', function() {
-    return 'Hola, soy una simple ruta.';
-});
-
-/**
- * Recibiendo parametros
- */
-Route::get('users/{name}', function($name) {
-    return 'Hola yo soy el usuario '.$name.'.';
-});
-
-/**
  * InicioController
  */
 Route::get('/inicio', 'InicioController@inicio');
 
 /**
- * Guardar usuario
+ * Jobs Routes
  */
 
-Route::get('/users', 'InicioController@guardarUsuario');
-
-Route::get('/user/details/{user}', 'InicioController@verUsuario');
+Route::get('jobs/{id}', [
+    'as' => 'job_show_path', 
+	'uses' => 'JobsController@show'
+]);
 
 
 

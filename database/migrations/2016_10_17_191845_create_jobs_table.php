@@ -22,6 +22,7 @@ class CreateJobsTable extends Migration
     		$table->date('hire_date');
     		$table->integer('number_of_vacancies');
     		$table->timestamps();
+    		$table->string('slug')->unique();
     	});
     }
 

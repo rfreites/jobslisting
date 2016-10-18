@@ -18,7 +18,8 @@ class Job extends Model
 			'salary',
 			'description',
 			'date_of_hire',
-			'number_of_vacancies'
+			'number_of_vacancies',
+			'slug'
 	];
 	
 	public function company()

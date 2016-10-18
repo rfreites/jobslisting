@@ -7266,4 +7266,17 @@ a.text-danger:focus, a.text-danger:hover {
   justify-content: center;
   align-content: center; }
 
+/**
+*Pagination
+*/
+ul.pagination {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none; }
+
 /*# sourceMappingURL=app.css.map */

@@ -29,6 +29,20 @@ Route::get('jobs/{id}', [
 	'uses' => 'JobsController@show'
 ]);
 
+/**
+ * Auth Routes
+ */
+
+Route::get('auth', [
+    'as' => 'auth_show_path', 
+	'uses' => 'AuthController@index'
+]);
+
+Route::post('auth', [
+		'as' => 'auth_store_path',
+		'uses' => 'AuthController@store'
+]);
+
 
 
 

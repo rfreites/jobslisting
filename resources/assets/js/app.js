@@ -18,4 +18,10 @@
 //     el: '#app'
 // });
 
+$(function(){
+
+   // jQuery methods go here...
+	$('ul.pagination li').addClass('btn btn-default');
+
+});
 console.log("Laravel App Test");

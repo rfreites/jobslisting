@@ -28,3 +28,15 @@
     justify-content: center;
     align-content: center;
 }
+
+/**
+*Pagination
+*/
+
+ul.pagination {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}

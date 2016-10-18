@@ -22,7 +22,7 @@ $factory->define(Jobs4Devs\User::class, function (Faker\Generator $faker) {
         'first_name' => $faker->name,
     	'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => bcrypt('secret'),
     	'active' => 1,
     	'birthdate' => $faker->dateTimeBetween('-45 years', '-18 years'),
     	'country' => $faker->country(),
@@ -75,7 +75,7 @@ $factory->define(Jobs4Devs\Job::class, function (Faker\Generator $faker)
 			'description' => $faker->sentence(random_int($min = 12, $max = 20), $variableNbWords = true),
 			'hire_date' => $faker->dateTime(),
 			'number_of_vacancies' => random_int($min = 1, $max = 10),
-			'slug'  => (string)($jobTitle.'-'.$faker->numberBetween($min = 100000, $max = 999999))
+			'slug'  => (string)(str_replace(" ", "-", $jobTitle).'-'.$faker->numberBetween($min = 100000, $max = 999999))
 	];
 });
 		

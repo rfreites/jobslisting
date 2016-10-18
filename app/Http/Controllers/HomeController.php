@@ -11,9 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$jobs = Job::with('company')->get();
+    	$jobs = Job::with('company')->paginate(20);
     	
-    	$total_results = $jobs->count();
+    	$total_results = Job::with('company')->count();
     	
     	return view('home', ['jobs' => $jobs, 'total_results' => $total_results]);
     }

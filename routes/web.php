@@ -13,36 +13,41 @@ use Jobs4Devs\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', 'HomeController@index');
-
-/**
- * InicioController
- */
-Route::get('/inicio', 'InicioController@inicio');
-
-/**
- * Jobs Routes
- */
-
-Route::get('jobs/{id}', [
-    'as' => 'job_show_path', 
-	'uses' => 'JobsController@show'
+Route::get('/', [
+		'as' => 'jobs_list_path',
+		'uses' => 'HomeController@index'
 ]);
+
+Route::group(['middleware'=>'auth'],function(){
+	
+	/**
+	 * Jobs Routes
+	 */
+	
+	Route::get('jobs/{id}', [
+			'as' => 'job_show_path',
+			'uses' => 'JobsController@show'
+	]);
+});
 
 /**
  * Auth Routes
  */
 
-Route::get('auth', [
+Route::get('login', [
     'as' => 'auth_show_path', 
 	'uses' => 'AuthController@index'
 ]);
 
-Route::post('auth', [
+Route::post('login', [
 		'as' => 'auth_store_path',
 		'uses' => 'AuthController@store'
 ]);
 
+Route::get('logout', [
+		'as' => 'auth_destroy_path',
+		'uses' => 'AuthController@destroy'
+]);
 
 
 

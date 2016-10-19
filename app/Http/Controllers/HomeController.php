@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 use Jobs4Devs\Http\Requests;
 use Jobs4Devs\Job;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index()
     {
+    	
     	$jobs = Job::with('company')->paginate(20);
     	
     	$total_results = Job::with('company')->count();

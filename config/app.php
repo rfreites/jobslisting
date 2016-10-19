@@ -177,6 +177,7 @@ return [
         // Jobs4Devs\Providers\BroadcastServiceProvider::class,
         Jobs4Devs\Providers\EventServiceProvider::class,
         Jobs4Devs\Providers\RouteServiceProvider::class,
+    	Jobs4Devs\Providers\ViewComposerServiceProvider::class,
 
     ],
 

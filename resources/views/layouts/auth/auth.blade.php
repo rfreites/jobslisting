@@ -3,7 +3,7 @@
 @section('content-app')
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 offset-sm-2 login-form">
+		<div class="col-lg-6 offset-lg-3 login-form">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				<h3 class="panel-title"><strong>Sign in </strong></h3>

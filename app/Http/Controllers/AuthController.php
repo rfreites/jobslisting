@@ -23,17 +23,23 @@ class AuthController extends Controller
     	
     	if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
     	
-    		return 'listo con username';
+    		return redirect()->route('jobs_list_path');
     	}
     	
     	elseif (Auth::attempt(['email'=> $request->username, 'password' => $request->password])) {
     	
-    		return 'listo con email';
+    		return redirect()->route('jobs_list_path');
     	}
     	else {
     		
     		return redirect()->route('auth_show_path')->withErrors('El usuario no existe.');    	
-    	} 	
+    	} 	  	
+    }
+    
+    public function destroy()
+    {
+    	auth()->logout();
     	
+    	return redirect()->route('auth_show_path');
     }
 }

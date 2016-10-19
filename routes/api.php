@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use Jobs4Devs\User;
+use Jobs4Devs\Job;
+use Jobs4Devs\Company;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/user/{id}', function ($id){
+	$user = User::find($id);
+	return $user;
+});//->middleware('auth:api');
+
+Route::get('/users', function (){
+	$users = User::all();
+	return $users;
+});//->middleware('auth:api');
+
+Route::get('/jobs', function (){
+	$jobs = Job::all();
+	return $jobs;
+});//->middleware('auth:api');
+
+Route::get('/companies/', function (){
+	$companies = Company::all();
+	return $companies;
+});//->middleware('auth:api');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Providers;
+namespace Jobs4Geeks\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Jobs4Devs\Events\SomeEvent' => [
-            'Jobs4Devs\Listeners\EventListener',
+        'Jobs4Geeks\Events\SomeEvent' => [
+            'Jobs4Geeks\Listeners\EventListener',
         ],
     ];
 

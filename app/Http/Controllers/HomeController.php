@@ -1,11 +1,11 @@
 <?php
 
-namespace Jobs4Devs\Http\Controllers;
+namespace Jobs4Geeks\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Jobs4Devs\Http\Requests;
-use Jobs4Devs\Job;
+use Jobs4Geeks\Http\Requests;
+use Jobs4Geeks\Job;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller

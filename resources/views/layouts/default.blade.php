@@ -17,11 +17,14 @@
 					<a class="navbar-brand" href="{{ route('jobs_list_path') }}">Jobs4Devs</a>
 					<div class="collapse navbar-toggleable-xs pull-xs-right" id="exCollapsingNavbar2">
 				    	<ul class="nav navbar-nav">
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="#">{{$currentUser->username}}</a>
-					      	</li>
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="{{ route('auth_destroy_path') }}">Cerrar Sesion</a>
+					      	<li class="nav-item btn-group">
+					        	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{$currentUser->username}}</a>
+					        	<div class="dropdown-menu" aria-labelledby="Preview">
+									<a class="dropdown-item" href="#">Mi Stack</a>
+									<a class="dropdown-item" href="#">Mi currículum</a>
+									<a class="dropdown-item" href="#">Configuración</a>
+									<a class="dropdown-item" href="{{ route('auth_destroy_path') }}">Cerrar Sesion</a>
+								</div>
 					      	</li>
 				    	</ul>
 				  	</div>
@@ -29,8 +32,12 @@
 					<a class="navbar-brand" href="{{ route('jobs_list_path') }}">Jobs4Devs</a>
 					<div class="collapse navbar-toggleable-xs pull-xs-right" id="exCollapsingNavbar2">
 				    	<ul class="nav navbar-nav">
-					      	<li class="nav-item">
-					        	<a class="nav-link" href="{{ route('auth_store_path') }}">Iniciar Sesion</a>
+					      	<li class="nav-item btn-group">
+					      		<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
+					        	<div class="dropdown-menu" aria-labelledby="Preview">
+									<a class="dropdown-item" href="{{ route('auth_store_path') }}">Usuario</a>
+									<a class="dropdown-item" href="{{ route('auth_empresa_show_path') }}">Empresa</a>
+								</div>
 					      	</li>
 				    	</ul>
 				  	</div>

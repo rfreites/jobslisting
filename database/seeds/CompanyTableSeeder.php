@@ -11,7 +11,7 @@ class CompanyTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(Jobs4Devs\Company::class, 260)->create()->each(function($company){
+    	factory(Jobs4Devs\Company::class, 540)->create()->each(function($company){
     		$job = factory(Jobs4Devs\Job::class)->make();
     		$company->jobs()->save($job);
     	});

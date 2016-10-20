@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'companies',
+        ],
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -44,7 +49,7 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-        ],
+        ]
     ],
 
     /*
@@ -65,10 +70,15 @@ return [
     */
 
     'providers' => [
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => Jobs4Geeks\Company::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
-            'model' => Jobs4Devs\User::class,
-        ],
+            'model' => Jobs4Geeks\User::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -92,11 +102,17 @@ return [
     */
 
     'passwords' => [
+        'companies' => [
+            'provider' => 'companies',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
-        ],
+        ]
     ],
 
 ];

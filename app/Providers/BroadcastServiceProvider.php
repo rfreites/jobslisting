@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Providers;
+namespace Jobs4Geeks\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

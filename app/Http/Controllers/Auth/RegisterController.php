@@ -1,10 +1,10 @@
 <?php
 
-namespace Jobs4Devs\Http\Controllers\Auth;
+namespace Jobs4Geeks\Http\Controllers\Auth;
 
-use Jobs4Devs\User;
+use Jobs4Geeks\User;
 use Validator;
-use Jobs4Devs\Http\Controllers\Controller;
+use Jobs4Geeks\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Providers;
+namespace Jobs4Geeks\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -12,7 +12,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Jobs4Devs\Model' => 'Jobs4Devs\Policies\ModelPolicy',
+        'Jobs4Geeks\Model' => 'Jobs4Geeks\Policies\ModelPolicy',
     ];
 
     /**

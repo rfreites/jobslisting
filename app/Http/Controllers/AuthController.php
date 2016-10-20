@@ -1,17 +1,17 @@
 <?php
 
-namespace Jobs4Devs\Http\Controllers;
+namespace Jobs4Geeks\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Jobs4Devs\Http\Requests;
+use Jobs4Geeks\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     public function index()
     {
-    	return view('./layouts/auth/auth');
+    	return view('layouts.auth.user.user_login');
     }
     
     public function store(Request $request)

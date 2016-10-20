@@ -1,10 +1,10 @@
 <?php
 
-namespace Jobs4Devs\Providers;
+namespace Jobs4Geeks\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\View\Factory;
-use Jobs4Devs\Http\Composers\CurrentUserComposer;
+use Jobs4Geeks\Http\Composers\CurrentUserComposer;
 
 
 

@@ -14,7 +14,7 @@ use function Faker\randomElement;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Jobs4Devs\User::class, function (Faker\Generator $faker) {
+$factory->define(Jobs4Geeks\User::class, function (Faker\Generator $faker) {
     static $password;
     
     return [
@@ -49,7 +49,7 @@ $factory->define(Jobs4Devs\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Jobs4Devs\Company::class, function (Faker\Generator $faker)
+$factory->define(Jobs4Geeks\Company::class, function (Faker\Generator $faker)
 {
 	static $password;
 	
@@ -57,7 +57,7 @@ $factory->define(Jobs4Devs\Company::class, function (Faker\Generator $faker)
 		'name' => $faker->domainWord(),
 		'description' => $faker->catchPhrase(),
 		'email' => $faker->companyEmail(),
-		'password' => $password ?: $password = bcrypt('secret'),
+		'password' => bcrypt('secret'),
 		'active' => 1,
 		'country' => $faker->country(),
 		'city' => $faker->city(),
@@ -66,7 +66,7 @@ $factory->define(Jobs4Devs\Company::class, function (Faker\Generator $faker)
 	];
 });
 
-$factory->define(Jobs4Devs\Job::class, function (Faker\Generator $faker)
+$factory->define(Jobs4Geeks\Job::class, function (Faker\Generator $faker)
 {
 	$jobTitle = $faker->jobTitle();
 	return [

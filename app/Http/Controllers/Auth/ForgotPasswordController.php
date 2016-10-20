@@ -1,8 +1,8 @@
 <?php
 
-namespace Jobs4Devs\Http\Controllers\Auth;
+namespace Jobs4Geeks\Http\Controllers\Auth;
 
-use Jobs4Devs\Http\Controllers\Controller;
+use Jobs4Geeks\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Http\Middleware;
+namespace Jobs4Geeks\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

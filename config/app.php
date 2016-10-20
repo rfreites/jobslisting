@@ -172,12 +172,12 @@ return [
         /*
          * Application Service Providers...
          */
-        Jobs4Devs\Providers\AppServiceProvider::class,
-        Jobs4Devs\Providers\AuthServiceProvider::class,
-        // Jobs4Devs\Providers\BroadcastServiceProvider::class,
-        Jobs4Devs\Providers\EventServiceProvider::class,
-        Jobs4Devs\Providers\RouteServiceProvider::class,
-    	Jobs4Devs\Providers\ViewComposerServiceProvider::class,
+        Jobs4Geeks\Providers\AppServiceProvider::class,
+        Jobs4Geeks\Providers\AuthServiceProvider::class,
+        // Jobs4Geeks\Providers\BroadcastServiceProvider::class,
+        Jobs4Geeks\Providers\EventServiceProvider::class,
+        Jobs4Geeks\Providers\RouteServiceProvider::class,
+    	Jobs4Geeks\Providers\ViewComposerServiceProvider::class,
 
     ],
 

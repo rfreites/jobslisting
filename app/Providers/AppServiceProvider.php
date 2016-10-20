@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Providers;
+namespace Jobs4Geeks\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+    	if ($this->app->environment() == 'local') {
+    		$this->app->register('Hesto\MultiAuth\MultiAuthServiceProvider');
+    	}
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Exceptions;
+namespace Jobs4Geeks\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

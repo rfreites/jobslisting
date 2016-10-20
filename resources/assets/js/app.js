@@ -22,6 +22,12 @@ $(function(){
 
    // jQuery methods go here...
 	$('ul.pagination li').addClass('btn btn-default');
+	
+	
+	$('#myTab a').click(function (e) {
+		  e.preventDefault()
+		  $(this).tab('show')
+		});
 
 });
 console.log("Laravel App Test");

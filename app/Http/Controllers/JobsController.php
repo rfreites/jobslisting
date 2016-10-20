@@ -1,11 +1,11 @@
 <?php
 
-namespace Jobs4Devs\Http\Controllers;
+namespace Jobs4Geeks\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Jobs4Devs\Http\Requests;
-use Jobs4Devs\Job;
+use Jobs4Geeks\Http\Requests;
+use Jobs4Geeks\Job;
 
 class JobsController extends Controller
 {
@@ -15,6 +15,11 @@ class JobsController extends Controller
 		
 		$job = Job::where('slug','=', $slug)->firstOrFail();
 	
-		return view('./layouts/jobs/jobs', ['job' => $job]);
+		return view('layouts.jobs.jobs', ['job' => $job]);
+	}
+	
+	public function create()
+	{
+		return view('layouts.jobs.create');
 	}
 }

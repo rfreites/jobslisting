@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Http\Middleware;
+namespace Jobs4Geeks\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Http\Composers;
+namespace Jobs4Geeks\Http\Composers;
 use \Illuminate\View\View;
 use \Illuminate\Support\Facades\Auth;
 

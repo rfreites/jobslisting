@@ -1,12 +1,13 @@
-@extends('./layouts.default')
+@extends('././layouts.default')
 
 @section('content-app')
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 offset-lg-3 login-form">
-			<div class="panel panel-default">
+
+  <div class="panel panel-default">
 				<div class="panel-heading">
-				<h3 class="panel-title"><strong>Sign in </strong></h3>
+				<h3 class="panel-title"><small>Sign in User</small></h3>
 					<div><a href="#">Forgot password?</a></div>
 				</div>
 	

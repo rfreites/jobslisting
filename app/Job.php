@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs;
+namespace Jobs4Geeks;
 
 use Illuminate\Database\Eloquent\Model;
 

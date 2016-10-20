@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobs4Devs\Http;
+namespace Jobs4Geeks\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \Jobs4Devs\Http\Middleware\EncryptCookies::class,
+            \Jobs4Geeks\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Jobs4Devs\Http\Middleware\VerifyCsrfToken::class,
+            \Jobs4Geeks\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -46,11 +46,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'company' => \Jobs4Geeks\Http\Middleware\RedirectIfNotCompany::class,
+        'company.guest' => \Jobs4Geeks\Http\Middleware\RedirectIfCompany::class,
+        'company' => \Jobs4Geeks\Http\Middleware\RedirectIfNotCompany::class,
+        'company.guest' => \Jobs4Geeks\Http\Middleware\RedirectIfCompany::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \Jobs4Devs\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Jobs4Geeks\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+    	'companies' => \Jobs4Geeks\Http\Middleware\RedirectIfNotAdmin::class,
     ];
 }

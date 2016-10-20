@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
         'company' => [
             'driver' => 'session',
             'provider' => 'companies',
@@ -70,6 +75,7 @@ return [
     */
 
     'providers' => [
+    		
         'companies' => [
             'driver' => 'eloquent',
             'model' => Jobs4Geeks\Company::class,
@@ -102,6 +108,7 @@ return [
     */
 
     'passwords' => [
+
         'companies' => [
             'provider' => 'companies',
             'table' => 'password_resets',

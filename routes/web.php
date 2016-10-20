@@ -18,48 +18,50 @@ Route::get('/', [
 		'uses' => 'HomeController@index'
 ]);
 
+
 Route::group(['middleware'=>'company'],function(){
-	
-	/**
-	 * Jobs Routes
-	 */
-	
+
 	Route::get('jobs/create', [
 			'as' => 'jobs_create_path',
 			'uses' => 'JobsController@create',
 	]);
-	
+
 	Route::post('jobs/create', [
 			'as' => 'jobs_store_path',
 			'uses' => 'JobsController@store',
 	]);
-	
+
+});
+
+Route::group(['middleware'=>'user'], function(){
 	Route::get('jobs/{id}', [
 			'as' => 'job_show_path',
 			'uses' => 'JobsController@show'
 	]);
-	
 });
-	
-/**
- * Auth Routes
- */
 
-Route::get('login', [
+//User Login
+Route::get('user/login', [
     'as' => 'auth_show_path', 
-	'uses' => 'AuthController@index'
+	'uses' => 'UserAuth\LoginController@showLoginForm'
 ]);
 
-
-Route::post('login', [
-		'as' => 'auth_store_path',
-		'uses' => 'AuthController@store'
+Route::post('user/login', [
+    'as' => 'auth_store_path', 
+	'uses' => 'UserAuth\LoginController@login'
 ]);
 
-Route::get('logout', [
-		'as' => 'auth_destroy_path',
-		'uses' => 'AuthController@destroy'
-]);
+Route::get('user/logout', 'UserAuth\LoginController@logout');
+
+//User Register
+Route::get('user/register', 'UserAuth\RegisterController@showRegistrationForm');
+Route::post('user/register', 'UserAuth\RegisterController@register');
+
+//User Passwords
+Route::post('user/password/email', 'UserAuth\ForgotPasswordController@sendResetLinkEmail');
+Route::post('user/password/reset', 'UserAuth\ResetPasswordController@reset');
+Route::get('user/password/reset', 'UserAuth\ForgotPasswordController@showLinkRequestForm');
+Route::get('user/password/reset/{token}', 'UserAuth\ResetPasswordController@showResetForm');
 
 
 //Company Login
@@ -87,3 +89,4 @@ Route::post('empresa/password/email', 'CompanyAuth\ForgotPasswordController@send
 Route::post('empresa/password/reset', 'CompanyAuth\ResetPasswordController@reset');
 Route::get('empresa/password/reset', 'CompanyAuth\ForgotPasswordController@showLinkRequestForm');
 Route::get('empresa/password/reset/{token}', 'CompanyAuth\ResetPasswordController@showResetForm');
+

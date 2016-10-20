@@ -27,7 +27,7 @@
 						{{ csrf_field() }}
 						<div class="input-group m-t-2">
 							<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-							<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username o email">                                        
+							<input id="login-username" type="email" class="form-control" name="email" value="" placeholder="email">                                        
 						</div>
 	
 						<div class="input-group m-t-2">

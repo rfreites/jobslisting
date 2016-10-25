@@ -1,6 +1,9 @@
 <?php
 
 use function Faker\randomElement;
+use Jobs4Geeks\User;
+use Jobs4Geeks\Company;
+use Jobs4Geeks\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +17,7 @@ use function Faker\randomElement;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Jobs4Geeks\User::class, function (Faker\Generator $faker) {
+$factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
     
     return [
@@ -45,11 +48,12 @@ $factory->define(Jobs4Geeks\User::class, function (Faker\Generator $faker) {
     	'professional_brief_description' => $faker->bs(),
     	'professional_website' => $faker->domainName(),
     	'job_status' => $faker->randomElement($array = array('Full-time', 'Part-time', 'Freelance', 'Estoy trabajando actualmente', 'No busco trabajo, pero estoy dispuesto a escuchar ofertas.','No estoy interesado en escuchar ofertas.')),
+    	'flag' => 'user',
         'remember_token' => str_random(10),
     ];
 });
 
-$factory->define(Jobs4Geeks\Company::class, function (Faker\Generator $faker)
+$factory->define(Company::class, function (Faker\Generator $faker)
 {
 	static $password;
 	
@@ -62,11 +66,12 @@ $factory->define(Jobs4Geeks\Company::class, function (Faker\Generator $faker)
 		'country' => $faker->country(),
 		'city' => $faker->city(),
 		'address' => $faker->address(),
+		'flag' => 'company',
 		'remember_token' => str_random(10),
 	];
 });
 
-$factory->define(Jobs4Geeks\Job::class, function (Faker\Generator $faker)
+$factory->define(Job::class, function (Faker\Generator $faker)
 {
 	$jobTitle = $faker->jobTitle();
 	return [
@@ -75,7 +80,7 @@ $factory->define(Jobs4Geeks\Job::class, function (Faker\Generator $faker)
 			'description' => $faker->sentence(random_int($min = 12, $max = 20), $variableNbWords = true),
 			'hire_date' => $faker->dateTime(),
 			'number_of_vacancies' => random_int($min = 1, $max = 10),
-			'slug'  => (string)(str_replace(" ", "-", $jobTitle).'-'.$faker->numberBetween($min = 100000, $max = 999999))
+			'slug'  => (string)(str_replace(" ", "-", $jobTitle).'-'.$faker->numberBetween($min = 100000, $max = 999999)),
 	];
 });
 		

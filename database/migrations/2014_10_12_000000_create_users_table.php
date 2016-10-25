@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('professional_brief_description');
             $table->string('professional_website');
             $table->string('job_status');
+            $table->string('flag');
             $table->rememberToken();
             $table->timestamps();
         });

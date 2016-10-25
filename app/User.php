@@ -29,7 +29,8 @@ class User extends Authenticatable
     	'professional_branch',
     	'professional_title',
     	'professional_brief_description',
-    	'job_status'
+    	'job_status',
+    	'flag'
     ];
 
     /**

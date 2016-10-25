@@ -22,6 +22,7 @@ class CreateCompaniesTable extends Migration
             $table->string('country');
             $table->string('city');
             $table->string('address');
+            $table->string('flag');
             $table->rememberToken();
             $table->timestamps();
         });

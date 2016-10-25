@@ -30,14 +30,53 @@ Route::group(['middleware'=>'company'],function(){
 			'as' => 'jobs_store_path',
 			'uses' => 'JobsController@store',
 	]);
+	
+	Route::get('jobs/{slug}/edit', [
+			'as' => 'job_edit_path',
+			'uses' => 'JobsController@edit'
+	]);
+	
+	Route::patch('jobs/{slug}/edit', [
+			'as' => 'job_patch_path',
+			'uses' => 'JobsController@update'
+	]);
+	
+	Route::delete('jobs/{slug}/edit', [
+			'as' => 'job_delete_path',
+			'uses' => 'JobsController@destroy'
+	]);
+	
+	Route::get('jobs/{slug}', [
+			'as' => 'job_show_path',
+			'uses' => 'JobsController@show'
+	]);
 
 });
 
 Route::group(['middleware'=>'user'], function(){
-	Route::get('jobs/{id}', [
-			'as' => 'job_show_path',
-			'uses' => 'JobsController@show'
-	]);
+	
+});
+
+Route::get('mail', function() {
+
+    Mail::send('Html.view', ['nombre' => 'Ronny'], function ($message) {
+        $message->from('john@johndoe.com', 'John Doe');
+        $message->sender('john@johndoe.com', 'John Doe');
+    
+        $message->to('john@johndoe.com', 'John Doe');
+    
+        $message->cc('john@johndoe.com', 'John Doe');
+        $message->bcc('john@johndoe.com', 'John Doe');
+    
+        $message->replyTo('john@johndoe.com', 'John Doe');
+    
+        $message->subject('Subject');
+    
+        $message->priority(3);
+    
+        $message->attach('pathToFile');
+    });
+
 });
 
 //User Login
@@ -51,7 +90,10 @@ Route::post('user/login', [
 	'uses' => 'UserAuth\LoginController@login'
 ]);
 
-Route::get('user/logout', 'UserAuth\LoginController@logout');
+Route::get('user/logout', [
+    'as' => 'auth_logout_path', 
+	'uses' => 'UserAuth\LoginController@logout'
+]);
 
 //User Register
 Route::get('user/register', 'UserAuth\RegisterController@showRegistrationForm');

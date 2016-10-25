@@ -13,16 +13,8 @@
 	
 				<div class="panel-body">
 					<form role="form" method="post" action="{{ route('auth_store_path') }}">
-						
-						@if($errors)
-						
-						@foreach($errors->all() as $error)
-						<div class="alert alert-danger">
-							<a class="close" data-dismiss="alert" href="#">×</a>{{$error}}
-						</div>
-						@endforeach
-						
-						@endif
+					
+						@include('partials.erros')
 						
 						{{ csrf_field() }}
 						<div class="input-group m-t-2">

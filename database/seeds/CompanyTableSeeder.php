@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Jobs4Geeks\Company;
+use Jobs4Geeks\Job;
 
 class CompanyTableSeeder extends Seeder
 {
@@ -11,8 +13,8 @@ class CompanyTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(Jobs4Devs\Company::class, 540)->create()->each(function($company){
-    		$job = factory(Jobs4Devs\Job::class)->make();
+    	factory(Company::class, 540)->create()->each(function($company){
+    		$job = factory(Job::class)->make();
     		$company->jobs()->save($job);
     	});
     }

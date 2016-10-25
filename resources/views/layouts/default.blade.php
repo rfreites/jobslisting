@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ES">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,22 @@
 		
 			<nav class="navbar navbar-full navbar-light bg-faded">
 				<div class="container">
-					@if($currentUser)
+					@if($currentUser && $currentUser->flag == 'company')
+					<a class="navbar-brand" href="{{ route('jobs_list_path') }}">Jobs4Devs</a>
+					<div class="collapse navbar-toggleable-xs pull-xs-right" id="exCollapsingNavbar2">
+				    	<ul class="nav navbar-nav">
+					      	<li class="nav-item btn-group">
+					        	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{$currentUser->name}}</a>
+					        	<div class="dropdown-menu" aria-labelledby="Preview">
+									<a class="dropdown-item" href="{{ route('jobs_store_path') }}">Crear nueva oferta</a>
+									<a class="dropdown-item" href="#">Mi currículum</a>
+									<a class="dropdown-item" href="#">Configuración</a>
+									<a class="dropdown-item" href="{{ route('auth_empresa_logout_path') }}">Cerrar Sesion</a>
+								</div>
+					      	</li>
+				    	</ul>
+				  	</div>
+					@elseif($currentUser && $currentUser->flag == 'user')
 					<a class="navbar-brand" href="{{ route('jobs_list_path') }}">Jobs4Devs</a>
 					<div class="collapse navbar-toggleable-xs pull-xs-right" id="exCollapsingNavbar2">
 				    	<ul class="nav navbar-nav">
@@ -23,12 +38,12 @@
 									<a class="dropdown-item" href="#">Mi Stack</a>
 									<a class="dropdown-item" href="#">Mi currículum</a>
 									<a class="dropdown-item" href="#">Configuración</a>
-									<a class="dropdown-item" href="{{ route('auth_destroy_path') }}">Cerrar Sesion</a>
+									<a class="dropdown-item" href="{{ route('auth_logout_path') }}">Cerrar Sesion</a>
 								</div>
 					      	</li>
 				    	</ul>
 				  	</div>
-					@else
+				  	@else
 					<a class="navbar-brand" href="{{ route('jobs_list_path') }}">Jobs4Devs</a>
 					<div class="collapse navbar-toggleable-xs pull-xs-right" id="exCollapsingNavbar2">
 				    	<ul class="nav navbar-nav">
@@ -41,16 +56,13 @@
 					      	</li>
 				    	</ul>
 				  	</div>
-					@endif
 					<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
 				    &#9776;
-				  	</button>			  	
+				  	</button>
+				  	@endif		  	
 				</div>
 			</nav>
-		
-		
 			
-		
 				
 		@yield('content-app')
 

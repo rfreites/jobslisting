@@ -16,7 +16,15 @@ class Company extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'email', 'password', 'active', 'country' ,'city', 'address',
+        'name', 
+    	'description', 
+    	'email', 
+    	'password', 
+    	'active', 
+    	'country' ,
+    	'city', 
+    	'address', 
+    	'flag',
     ];
 
     /**

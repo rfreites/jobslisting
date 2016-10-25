@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Jobs4Geeks\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -31,6 +32,6 @@ class UsersTableSeeder extends Seeder
     	]);
     	*/
     	
-    	factory(Jobs4Devs\User::class, 1000)->create();
+    	factory(User::class, 1000)->create();
     }
 }

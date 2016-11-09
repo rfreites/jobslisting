@@ -43,7 +43,9 @@ class ViewComposerServiceProvider extends ServiceProvider
 				$currentUserSession = Auth::guard('company')->user();
 				
 			}else if(Auth::guard('user')->user()){
+
 				$currentUserSession = Auth::guard('user')->user();
+				
 			}
 			
 			$view->with('currentUser', $currentUserSession);// does what you expect

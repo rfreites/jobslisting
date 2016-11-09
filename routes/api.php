@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
-use Jobs4Devs\User;
-use Jobs4Devs\Job;
-use Jobs4Devs\Company;
+use Jobs4Geeks\User;
+use Jobs4Geeks\Job;
+use Jobs4Geeks\Company;
 
 /*
 |--------------------------------------------------------------------------
